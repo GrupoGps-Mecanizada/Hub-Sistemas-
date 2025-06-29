@@ -19,7 +19,7 @@
             position: relative;
         }
 
-        /* Geometric Background Animation */
+        /* Soft Floating Background Animation */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -38,61 +38,75 @@
 
         .line {
             position: absolute;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            animation: moveLine 15s infinite linear;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.06), transparent);
+            animation: slowFloat 60s infinite ease-in-out;
         }
 
         .line:nth-child(1) {
-            width: 1px;
-            height: 100vh;
-            left: 10%;
+            width: 2px;
+            height: 80vh;
+            left: 15%;
+            top: 10%;
             animation-delay: 0s;
-            animation-duration: 20s;
+            animation-duration: 80s;
         }
 
         .line:nth-child(2) {
-            width: 100vw;
+            width: 60vw;
             height: 1px;
-            top: 20%;
-            animation-delay: 5s;
-            animation-duration: 25s;
+            top: 25%;
+            left: 20%;
+            animation-delay: 20s;
+            animation-duration: 100s;
         }
 
         .line:nth-child(3) {
             width: 1px;
-            height: 100vh;
-            left: 60%;
-            animation-delay: 10s;
-            animation-duration: 18s;
+            height: 70vh;
+            left: 65%;
+            top: 15%;
+            animation-delay: 40s;
+            animation-duration: 90s;
         }
 
         .line:nth-child(4) {
-            width: 100vw;
+            width: 50vw;
             height: 1px;
-            top: 70%;
-            animation-delay: 15s;
-            animation-duration: 22s;
+            top: 75%;
+            left: 25%;
+            animation-delay: 60s;
+            animation-duration: 110s;
         }
 
         .line:nth-child(5) {
             width: 1px;
-            height: 100vh;
-            left: 80%;
-            animation-delay: 8s;
-            animation-duration: 30s;
+            height: 60vh;
+            left: 85%;
+            top: 20%;
+            animation-delay: 30s;
+            animation-duration: 120s;
         }
 
-        @keyframes moveLine {
+        @keyframes slowFloat {
             0% {
                 opacity: 0;
-                transform: translateX(-100px);
+                transform: translate(0, 0) scale(1);
+            }
+            25% {
+                opacity: 0.4;
+                transform: translate(20px, -30px) scale(1.02);
             }
             50% {
-                opacity: 1;
+                opacity: 0.6;
+                transform: translate(-15px, -60px) scale(0.98);
+            }
+            75% {
+                opacity: 0.3;
+                transform: translate(25px, -40px) scale(1.01);
             }
             100% {
                 opacity: 0;
-                transform: translateX(100px);
+                transform: translate(0, -80px) scale(1);
             }
         }
 
@@ -110,7 +124,7 @@
                 rgba(29, 78, 216, 0.95) 75%, 
                 rgba(30, 58, 138, 0.95) 100%);
             background-size: 400% 400%;
-            animation: gradientShift 20s ease infinite;
+            animation: gradientShift 45s ease infinite;
             z-index: -1;
         }
 
@@ -153,7 +167,7 @@
             letter-spacing: 4px;
             text-transform: uppercase;
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
-            animation: subtleGlow 6s ease-in-out infinite alternate;
+            animation: subtleGlow 12s ease-in-out infinite alternate;
         }
 
         @keyframes subtleGlow {
@@ -277,7 +291,7 @@
             height: 6px;
             background: #10b981;
             border-radius: 50%;
-            animation: pulse 3s infinite;
+            animation: pulse 4s infinite;
         }
 
         @keyframes pulse {
